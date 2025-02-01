@@ -1,4 +1,4 @@
-# Function to perform DFS
+# تابع برای انجام جستجوی عمق‌اول (DFS)
 def dfs(graph, start, visited):
     stack = [start]
     while stack:
@@ -9,7 +9,7 @@ def dfs(graph, start, visited):
                 if not visited[neighbor]:
                     stack.append(neighbor)
 
-# Function to check if the graph is strongly connected
+# تابع برای بررسی اینکه گراف به شدت متصل است یا نه
 def is_strongly_connected(graph, vertices):
     for node in vertices:
         visited = {v: False for v in vertices}
@@ -18,7 +18,7 @@ def is_strongly_connected(graph, vertices):
             return False
     return True
 
-# Function to read graph from a file
+# تابع برای خواندن گراف از یک فایل
 def read_graph(filename):
     graph = {}
     vertices = set()
@@ -32,14 +32,14 @@ def read_graph(filename):
             vertices.add(v)
     return graph, vertices
 
-# Main function
+# تابع اصلی
 def main():
-    filename = 'graph.txt'  # Replace with your file name
+    filename = 'graph.txt'  # نام فایل را جایگزین کنید
     graph, vertices = read_graph(filename)
     if is_strongly_connected(graph, vertices):
         print("The graph is strongly connected.")
     else:
         print("The graph is not strongly connected.")
 
-# Run the program
+# اجرای برنامه
 main()
